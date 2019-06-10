@@ -20,5 +20,15 @@
 			<groupId>cn.simple-microservice</groupId>
 			<artifactId>basic-common-core</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>cn.simple-microservice</groupId>
+			<artifactId>product-service-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>cn.simple-microservice</groupId>
+			<artifactId>stock-service-api</artifactId>
+		</dependency>
 	</dependencies>
 </project>

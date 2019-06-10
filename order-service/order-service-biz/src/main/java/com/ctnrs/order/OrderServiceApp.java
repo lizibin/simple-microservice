@@ -9,7 +9,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * 商品服务启动类
- *
  * @author zibin
  */
 @SpringBootApplication

@@ -13,6 +13,7 @@
         <module>product-service</module>
         <module>stock-service</module>
         <module>order-service</module>
+        <module>basic-common</module>
     </modules>
     <name>simple-microservice</name>
     <packaging>pom</packaging>
@@ -25,7 +26,7 @@
             <name>Lee Zzi βin</name>
             <email>12572024@qq.com</email>
             <organization>ctnrs</organization>
-            <organizationUrl>http://http://www.ctnrs.com/</organizationUrl>
+            <organizationUrl>http://www.ctnrs.com/</organizationUrl>
             <roles>
                 <role>Developer</role>
             </roles>
@@ -56,16 +57,37 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!-- 统一依赖管理 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>basic-common-bom</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
 
 
     <dependencies>
+        <!--eureka 客户端 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
         <!-- feignclient远程调用 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <!--Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

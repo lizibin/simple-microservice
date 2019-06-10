@@ -1,8 +1,4 @@
-server:
-  port: 8010
 spring:
-  application:
-    name: product-service
   datasource:
     url: jdbc:mysql://47.109.190.221:3306/tb_product?characterEncoding=utf-8
     username: root

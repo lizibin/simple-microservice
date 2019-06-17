@@ -15,7 +15,6 @@
 	<packaging>pom</packaging>
 	<version>${simple-microservice.version}</version>
 
-
 	<properties>
 		<simple-microservice.version>1.0.0</simple-microservice.version>
 	</properties>

@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: protal-service
+  freemarker:
+    allow-request-override: false
+    cache: true
+    check-template-location: true
+    charset: UTF-8
+    content-type: text/html; charset=utf-8
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: false
+    suffix: .ftl
+    template-loader-path:
+      - classpath:/templates/

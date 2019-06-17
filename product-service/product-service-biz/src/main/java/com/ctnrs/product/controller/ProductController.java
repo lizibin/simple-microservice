@@ -9,18 +9,16 @@ import com.ctnrs.basic.core.util.R;
 import com.ctnrs.product.api.model.Product;
 import com.ctnrs.product.mapper.ProductMapper;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 商品的服务控制层
+ *
  * @author zibin
  */
 @AllArgsConstructor
 @RestController
-@RequestMapping("product")
+@RequestMapping("/product")
 public class ProductController {
 
 	private final ProductMapper productMapper;
@@ -30,8 +28,8 @@ public class ProductController {
 	 *
 	 * @return
 	 */
-	@GetMapping("findByProductId")
-	public R<Product> findByProductId(@RequestParam(value = "productId") Long productId) {
+	@GetMapping("/findByProductId/{productId}")
+	public R<Product> findByProductId(@PathVariable Long productId) {
 		Product product = productMapper.findByProductId(productId);
 		return ResResultManager.setResultSuccess(product);
 	}

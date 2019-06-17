@@ -4,8 +4,10 @@
  */
 package com.ctnrs.product;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * 商品服务启动类
@@ -13,6 +15,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author zibin
  */
 @SpringBootApplication
+@EnableFeignClients
+@MapperScan(basePackages="com.ctnrs.product.mapper")
 public class ProductServiceApp {
 
     public static void main(String[] args) {

@@ -14,6 +14,7 @@
 		<module>stock-service</module>
 		<module>order-service</module>
 		<module>basic-common</module>
+		<module>portal-service</module>
 	</modules>
 	<name>simple-microservice</name>
 	<packaging>pom</packaging>

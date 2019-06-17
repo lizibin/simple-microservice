@@ -33,7 +33,6 @@
 			<groupId>cn.simple-microservice</groupId>
 			<artifactId>basic-common-core</artifactId>
 		</dependency>
-
 	</dependencies>
 
 	<build>

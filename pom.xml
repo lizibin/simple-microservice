@@ -14,7 +14,6 @@
 		<module>stock-service</module>
 		<module>order-service</module>
 		<module>basic-common</module>
-		<module>portal-service</module>
 	</modules>
 	<name>simple-microservice</name>
 	<packaging>pom</packaging>
@@ -89,6 +88,20 @@
 				<version>${project.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+
+			<!--spring boot web 模块 -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>${springboot.version}</version>
+				<exclusions>
+					<!--排除tomcat依赖 ,使用underom -->
+					<exclusion>
+						<artifactId>spring-boot-starter-tomcat</artifactId>
+						<groupId>org.springframework.boot</groupId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

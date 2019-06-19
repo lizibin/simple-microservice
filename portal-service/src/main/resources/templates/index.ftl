@@ -13,15 +13,17 @@
     <link rel="stylesheet" href="../js/layui/css/layui.css" media="all">
 </head>
 <body>
-<img alt="容器学院-www.ctnrs.com" src="../images/logo.png">
-<div class="page-container">
-    <h1 class="title"></h1>
-    <div style="margin-top: 15%;">
-        <button class="layui-btn layui-btn-lg layui-btn-primary layui-btn-radius" onclick="adduser()">添加美女</button>
-        <button class="layui-btn layui-btn-lg layui-btn-primary layui-btn-radius" onclick="queryuserList()">今晚翻盘哪个
-        </button>
+<center>
+    <a href="http://www.ctnrs.com"><img alt="容器学院-www.ctnrs.com" src="../images/logo.png"></a>
+    <div class="page-container">
+        <h1 class="title"></h1>
+        <div style="margin-top: 15%;">
+            <button class="layui-btn layui-btn-lg layui-btn-primary layui-btn-radius" onclick="queryProductList()">查询商品服务
+            </button>
+            </button>
+        </div>
     </div>
-</div>
+</center>
 <script src="../js/jquery-1.8.2.min.js"></script>
 <script src="../js/layui/layui.js"></script>
 <script src="../js/index.js"></script>

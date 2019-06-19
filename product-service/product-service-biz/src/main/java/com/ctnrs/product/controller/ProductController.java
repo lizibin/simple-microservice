@@ -9,7 +9,12 @@ import com.ctnrs.basic.core.util.R;
 import com.ctnrs.product.api.model.Product;
 import com.ctnrs.product.mapper.ProductMapper;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * 商品的服务控制层
@@ -32,5 +37,17 @@ public class ProductController {
 	public R<Product> findByProductId(@PathVariable Long productId) {
 		Product product = productMapper.findByProductId(productId);
 		return ResResultManager.setResultSuccess(product);
+	}
+
+
+	/**
+	 * 根据商品id查询商品
+	 *
+	 * @return
+	 */
+	@GetMapping("/queryAllProduct")
+	public R<List<Product>> findByProductId() {
+		List<Product> productList = productMapper.queryAllProduct();
+		return ResResultManager.setResultSuccess(productList);
 	}
 }

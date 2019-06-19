@@ -12,6 +12,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 /**
  * 商品服务远程调用客户端
  * @author zibin
@@ -21,5 +23,8 @@ public interface ProductServiceClient {
 
 	@GetMapping("product/findByProductId")
 	R<Product> findByProductId(@RequestParam(value = "productId") Long productId);
+
+	@GetMapping("product/queryAll")
+	R<List<Product>> queryAllProduct();
 
 }

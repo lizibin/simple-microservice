@@ -4,6 +4,6 @@ MAINTAINER www.ctnrs.com
 
 EXPOSE 8888
 
-COPY ./target/legendshop-basic-eureka.jar /opt/legendshop-basic-eureka.jar
+COPY ./target/eureka-service.jar /opt/eureka-service.jar
 
-CMD java -jar /opt/legendshop-basic-eureka.jar
+CMD java -jar /opt/eureka-service.jar

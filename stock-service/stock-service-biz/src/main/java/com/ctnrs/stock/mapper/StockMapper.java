@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Select;
 
 public interface StockMapper {
 
-	@Select("select * from product_stock where id = #{productId})")
+	@Select("select s.id,s.prod_id as prodId, s.sales_stock AS salesStock,s.real_stock AS realStock FROM stock s WHERE prod_id = #{productId}")
 	Stock findStockByProductId(@Param("productId") Long productId);
 
 	@Select("select * from product_stock where id = #{productId})")

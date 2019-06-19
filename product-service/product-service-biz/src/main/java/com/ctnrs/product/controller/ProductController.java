@@ -8,6 +8,8 @@ import com.ctnrs.basic.core.base.ResResultManager;
 import com.ctnrs.basic.core.util.R;
 import com.ctnrs.product.api.model.Product;
 import com.ctnrs.product.mapper.ProductMapper;
+import com.ctnrs.stock.api.client.StockServiceClient;
+import com.ctnrs.stock.api.model.Stock;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,6 +29,8 @@ import java.util.List;
 public class ProductController {
 
 	private final ProductMapper productMapper;
+
+	private final StockServiceClient stockServiceClient;
 
 	/**
 	 * 根据商品id查询商品
@@ -48,6 +52,10 @@ public class ProductController {
 	@GetMapping("/queryAllProduct")
 	public R<List<Product>> findByProductId() {
 		List<Product> productList = productMapper.queryAllProduct();
+		for (Product prod:productList) {
+			R<Stock> stockResult = stockServiceClient.findStockByProductId(prod.getId());
+			prod.setStock(stockResult.getResult().getRealStock());
+		}
 		return ResResultManager.setResultSuccess(productList);
 	}
 }

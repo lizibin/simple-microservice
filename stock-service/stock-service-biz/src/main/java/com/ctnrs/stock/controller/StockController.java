@@ -6,8 +6,10 @@ package com.ctnrs.stock.controller;
 
 import com.ctnrs.basic.core.base.ResResultManager;
 import com.ctnrs.basic.core.util.R;
+import com.ctnrs.stock.api.model.Stock;
 import com.ctnrs.stock.mapper.StockMapper;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 @RestController
 @RequestMapping("stock")
+@Slf4j
 public class StockController {
 
 	private final StockMapper stockMapper;
@@ -27,7 +30,15 @@ public class StockController {
 	 *
 	 * @return
 	 */
-	@PostMapping("deductionStock")
+
+	@GetMapping("/findStockByProductId/{productId}")
+	public R<Stock> findStockByProductId(@PathVariable("productId") Long productId) {
+		log.info("商品id为：{}", productId);
+		Stock stock = stockMapper.findStockByProductId(productId);
+		return ResResultManager.setResultSuccess(stock);
+	}
+
+	@PostMapping("/deductionStock")
 	public R<Boolean> deductionStock(@RequestParam(value = "productId") Long productId,
 									 @RequestParam(value = "count") Long count
 	) {

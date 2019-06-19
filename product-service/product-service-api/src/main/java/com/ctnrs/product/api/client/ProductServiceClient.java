@@ -21,10 +21,19 @@ import java.util.List;
 @FeignClient(ProductServiceNameConstant.PRODUCT_SERVICE)
 public interface ProductServiceClient {
 
+	/**
+	 * 根据商品id获取商品对象
+	 * @param productId
+	 * @return
+	 */
 	@GetMapping("product/findByProductId")
 	R<Product> findByProductId(@RequestParam(value = "productId") Long productId);
 
-	@GetMapping("product/queryAll")
+	/**
+	 * 获取所有商品集合
+	 * @return
+	 */
+	@GetMapping("product/queryAllProduct")
 	R<List<Product>> queryAllProduct();
 
 }

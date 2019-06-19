@@ -4,6 +4,7 @@
  */
 package com.ctnrs.order;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -12,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author zibin
  */
 @SpringBootApplication
+@MapperScan(basePackages="com.ctnrs.order.mapper")
 public class OrderServiceApp {
 	public static void main(String[] args) {
 		SpringApplication.run(OrderServiceApp.class, args);

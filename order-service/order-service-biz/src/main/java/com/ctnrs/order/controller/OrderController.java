@@ -7,10 +7,14 @@ package com.ctnrs.order.controller;
 import com.ctnrs.basic.core.base.ResResultManager;
 import com.ctnrs.basic.core.util.R;
 import com.ctnrs.product.api.client.ProductServiceClient;
-import com.ctnrs.product.api.model.Product;
 import com.ctnrs.stock.api.client.StockServiceClient;
 import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * 订单的服务控制层
@@ -19,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @AllArgsConstructor
+@RequestMapping("order")
 public class OrderController {
 
 
@@ -31,14 +36,10 @@ public class OrderController {
 	 *
 	 * @return
 	 */
-	public R submitOrder() {
-		//先查询下单的商品
+	@PostMapping("/submitOrder")
+	public R submitOrder(HttpServletRequest request, @RequestParam("productId") Long productId, @RequestParam("count") int count) {
+		//保存订单
 
-		R<Product> productResult = productServiceClient.findByProductId(111L);
-		if (!productResult.hasBody()) {
-			return ResResultManager.setResultError("下单商品异常或未查询到！");
-		}
-		Product product = productResult.getResult();
 
 		//再扣除商品库存
 

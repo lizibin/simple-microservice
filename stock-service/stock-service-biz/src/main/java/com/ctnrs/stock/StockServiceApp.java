@@ -4,6 +4,7 @@
  */
 package com.ctnrs.stock;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -13,6 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author zibin
  */
 @SpringBootApplication
+@MapperScan(basePackages="com.ctnrs.stock.mapper")
 public class StockServiceApp {
 
     public static void main(String[] args) {

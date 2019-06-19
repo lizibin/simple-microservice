@@ -14,6 +14,11 @@ import lombok.Data;
 public class Stock {
 
 	/**
+	 * id
+	 */
+	private Long id;
+
+	/**
 	 * 商品id
 	 */
 	private Long prodId;
@@ -21,10 +26,10 @@ public class Stock {
 	/***
 	 * 销售库存
 	 */
-	private Long salesStcok;
+	private Long salesStock;
 
 	/***
 	 * 真实库存
 	 */
-	private Long realStcok;
+	private Long realStock;
 }

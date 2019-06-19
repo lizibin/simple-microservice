@@ -6,14 +6,16 @@ package com.ctnrs.portal;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * 门户启动类
  * @author zibin
  */
 @SpringBootApplication
-public class portalServiceApp {
+@EnableFeignClients("com.ctnrs")
+public class PortalServiceApp {
 	public static void main(String[] args) {
-		SpringApplication.run(portalServiceApp.class);
+		SpringApplication.run(PortalServiceApp.class);
 	}
 }

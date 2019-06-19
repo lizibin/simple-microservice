@@ -7,7 +7,10 @@ package com.ctnrs.stock.api.client;
 
 import com.ctnrs.basic.core.util.R;
 import com.ctnrs.stock.api.constant.StockServiceNameConstant;
+import com.ctnrs.stock.api.model.Stock;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -19,7 +22,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(StockServiceNameConstant.STOCK_SERVICE)
 public interface StockServiceClient {
 
-	@PostMapping("deductionStock")
+	@GetMapping("stock/findStockByProductId/{productId}")
+	R<Stock> findStockByProductId(@PathVariable("productId") Long productId);
+
+	@PostMapping("/stock/deductionStock")
 	R<Boolean> deductionStock(@RequestParam(value = "productId") Long productId,
 							  @RequestParam(value = "count") Long count
 	);

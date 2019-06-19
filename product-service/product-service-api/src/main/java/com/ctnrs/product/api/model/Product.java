@@ -8,14 +8,17 @@ import lombok.Data;
 
 /**
  * 商品的实体
+ *
  * @author zibin
  */
 @Data
 public class Product {
 
-	private int id;
+	private Long id;
 
 	private String productName;
 
 	private Double price;
+
+	private Long stock;
 }

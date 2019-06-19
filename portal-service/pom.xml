@@ -40,12 +40,6 @@
 			<groupId>cn.simple-microservice</groupId>
 			<artifactId>order-service-api</artifactId>
 		</dependency>
-
-		<!-- 引入库存接口依赖包. -->
-		<dependency>
-			<groupId>cn.simple-microservice</groupId>
-			<artifactId>stock-service-api</artifactId>
-		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

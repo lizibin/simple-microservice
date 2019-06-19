@@ -18,8 +18,11 @@
     <div class="page-container">
         <h1 class="title"></h1>
         <div style="margin-top: 15%;">
-            <button class="layui-btn layui-btn-lg layui-btn-primary layui-btn-radius" onclick="queryProductList()">查询商品服务
+            <button class="layui-btn layui-btn-lg layui-btn-primary layui-btn-radius" onclick="queryProductList()">
+                查询商品服务
             </button>
+            <button class="layui-btn layui-btn-lg layui-btn-primary layui-btn-radius" onclick="queryOrderList()">
+                查询订单服务
             </button>
         </div>
     </div>

@@ -15,8 +15,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @author zibin
  */
 @SpringBootApplication
-@EnableFeignClients
 @MapperScan(basePackages="com.ctnrs.product.mapper")
+@EnableFeignClients("com.ctnrs")
 public class ProductServiceApp {
 
     public static void main(String[] args) {

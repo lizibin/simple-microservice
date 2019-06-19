@@ -20,6 +20,6 @@ public interface ProductMapper {
 	@Select("select p.product_name as productName,p.price as price from product p where id = #{productId}")
 	Product findByProductId(@Param("productId") Long productId);
 
-	@Select("select p.product_name as productName,p.price as price")
+	@Select("select p.id,p.product_name as productName,p.price as price from product p")
 	List<Product> queryAllProduct();
 }

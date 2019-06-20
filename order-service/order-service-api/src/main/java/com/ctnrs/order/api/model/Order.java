@@ -6,8 +6,11 @@ package com.ctnrs.order.api.model;
 
 import lombok.Data;
 
+import java.util.Date;
+
 /**
  * 订单的实体
+ * @author zibin
  */
 @Data
 public class Order {
@@ -17,4 +20,8 @@ public class Order {
 	private String orderProductName;
 
 	private Double orderPrice;
+
+	private int count;
+
+	private Date buyDate;
 }

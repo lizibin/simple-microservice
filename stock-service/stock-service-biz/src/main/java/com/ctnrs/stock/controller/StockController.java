@@ -40,7 +40,7 @@ public class StockController {
 
 	@PostMapping("/deductionStock")
 	public R<Boolean> deductionStock(@RequestParam(value = "productId") Long productId,
-									 @RequestParam(value = "count") Long count
+									 @RequestParam(value = "count") int count
 	) {
 		Long result = stockMapper.deductionStock(productId, count);
 		return ResResultManager.setResultSuccess(ResResultManager.toDaoResult(result));

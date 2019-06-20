@@ -22,11 +22,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(StockServiceNameConstant.STOCK_SERVICE)
 public interface StockServiceClient {
 
-	@GetMapping("stock/findStockByProductId/{productId}")
+	@GetMapping("/stock/findStockByProductId/{productId}")
 	R<Stock> findStockByProductId(@PathVariable("productId") Long productId);
 
 	@PostMapping("/stock/deductionStock")
 	R<Boolean> deductionStock(@RequestParam(value = "productId") Long productId,
-							  @RequestParam(value = "count") Long count
+							  @RequestParam(value = "count") int count
 	);
 }

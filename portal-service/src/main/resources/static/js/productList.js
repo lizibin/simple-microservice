@@ -8,17 +8,17 @@ $(function () {
       , page: true
       , id: 'productListReload'
       , height: 500
-      ,response: {
+      , response: {
         statusName: 'status' //规定数据状态的字段名称，默认：code
-        ,statusCode: 200 //规定成功的状态码，默认：0
-        ,msgName: 'msg' //规定状态信息的字段名称，默认：msg
-        ,dataName: 'result' //规定数据列表的字段名称，默认：data
+        , statusCode: 200 //规定成功的状态码，默认：0
+        , msgName: 'msg' //规定状态信息的字段名称，默认：msg
+        , dataName: 'result' //规定数据列表的字段名称，默认：data
       }
       , cols: [[
         {field: 'id', width: 180, title: '序列'}
         , {field: 'productName', title: '商品名称'}
         , {field: 'price', width: 180, title: '商品价格', sort: true}
-        , {field: 'stock', title: '商品库存'}
+        , {field: 'stock', title: '商品库存', sort: true}
         , {fixed: 'right', width: 250, align: 'center', title: '操作', toolbar: '#productOperBar'}
       ]]
 
@@ -32,7 +32,30 @@ $(function () {
           icon: 3,
           btn: ['确定', '取消'] //按钮
         }, function () {
-          layer.msg('正在下单', {icon: 1});
+          //layer.msg('正在下单', {icon: 1});
+          var index;
+          $.ajax({
+            type: "POST",
+            url: "http://localhost:9999/order/submitOrder",
+            data: {productId: data.id, orderProductName: data.productName,orderPrice:data.price,count:1},
+            dataType: "json",
+            beforeSend:function(XMLHttpRequest){
+              index = layer.load(1, {
+                shade: [0.1,'#fff'] //0.1透明度的白色背景
+              });
+            },
+            success: function (data) {
+              layer.close(index);
+            },
+            error: function (e) {
+              console.log(e);
+              layer.close(index);
+            }
+          });
+          layer.load(1, {
+            shade: [0.1, '#fff'] //0.1透明度的白色背景
+          });
+
         }, function (index) {
           layer.close(index);
         });

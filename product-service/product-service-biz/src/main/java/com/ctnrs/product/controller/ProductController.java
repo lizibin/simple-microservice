@@ -43,7 +43,7 @@ public class ProductController {
 
 
 	/**
-	 * 根据商品id查询商品
+	 * 查询所有商品
 	 *
 	 * @return
 	 */

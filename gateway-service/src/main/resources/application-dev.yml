@@ -9,7 +9,6 @@ spring:
           lower-case-service-id: true
       routes:
         - id: product-service
-          #转发地址ser-service,对应eureka的别名
           uri: lb://product-service
           filters:
             - StripPrefix=1
@@ -17,20 +16,18 @@ spring:
             - Path=/product/**
 
         - id: order-service
-            #转发地址ser-service,对应eureka的别名
-            uri: lb://order-service
-            filters:
-              - StripPrefix=1
-            predicates:
-              - Path=/order/**
+          uri: lb://order-service
+          filters:
+            - StripPrefix=1
+          predicates:
+            - Path=/order/**
 
         - id: stock-service
-            #转发地址ser-service,对应eureka的别名
-            uri: lb://stock-service
-            filters:
-              - StripPrefix=1
-            predicates:
-              - Path=/stock/**
+          uri: lb://stock-service
+          filters:
+            - StripPrefix=1
+          predicates:
+            - Path=/stock/**
 
 eureka:
   instance:

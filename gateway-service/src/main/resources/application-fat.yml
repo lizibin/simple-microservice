@@ -8,13 +8,27 @@ spring:
           ##小写serviceId
           lower-case-service-id: true
       routes:
-        - id: portal-service
-          #转发地址ser-service,对应eureka的别名
-          uri: lb://portal-service
+        - id: product-service
+          uri: lb://product-service
           filters:
             - StripPrefix=1
           predicates:
-            - Path=/protal/**
+            - Path=/product/**
+
+        - id: order-service
+          uri: lb://order-service
+          filters:
+            - StripPrefix=1
+          predicates:
+            - Path=/order/**
+
+        - id: stock-service
+          uri: lb://stock-service
+          filters:
+            - StripPrefix=1
+          predicates:
+            - Path=/stock/**
+
 eureka:
   instance:
     prefer-ip-address: false

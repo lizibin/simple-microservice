@@ -17,9 +17,9 @@ import java.util.List;
  * @author zibin
  */
 public interface OrderMapper {
-	@Insert("insert into order (order_number,order_product_name,order_price,count,buy_date) values (#{orderNumber},#{orderProductName},#{orderPrice},#{count},#{buyDate})")
+	@Insert("INSERT INTO orders (order_number,order_product_name,order_price,COUNT,buy_date) VALUES  (#{orderNumber},#{orderProductName},#{orderPrice},#{count},#{buyDate})")
 	int submitOrder(String orderNumber, String orderProductName, Double orderPrice, int count, Date buyDate);
 
-	@Select("select o.id,o.order_number as orderNumber,o.order_product_name as orderProductName,o.order_price as orderPrice,o.count,o.buy_date as buyDate from order o")
+	@Select("select o.id,o.order_number as orderNumber,o.order_product_name as orderProductName,o.order_price as orderPrice,o.count,o.buy_date as buyDate from orders o")
 	List<Order> queryAllOrder();
 }

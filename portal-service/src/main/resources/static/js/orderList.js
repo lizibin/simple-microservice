@@ -16,11 +16,11 @@ $(function () {
       }
       , cols: [[
         {field: 'id', width: 180, title: '序列'}
-        , {field: 'productName', title: '订单编号'}
-        , {field: 'price', width: 180, title: '订单商品名称', sort: true}
-        , {field: 'stock', title: '订单商品价格', sort: true}
-        , {field: 'stock', title: '订单数量', sort: true}
-        , {field: 'stock', title: '购买日期', sort: true}
+        , {field: 'orderNumber', title: '订单编号'}
+        , {field: 'orderProductName', width: 180, title: '订单商品名称'}
+        , {field: 'orderPrice', title: '订单商品价格', sort: true}
+        , {field: 'count', title: '订单数量', sort: true}
+        , {field: 'buyDate', title: '购买日期'}
       ]]
 
     });

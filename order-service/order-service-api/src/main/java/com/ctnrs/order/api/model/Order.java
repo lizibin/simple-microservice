@@ -10,10 +10,13 @@ import java.util.Date;
 
 /**
  * 订单的实体
+ *
  * @author zibin
  */
 @Data
 public class Order {
+
+	private Long id;
 
 	private String orderNumber;
 

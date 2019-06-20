@@ -33,31 +33,29 @@ $(function () {
           btn: ['确定', '取消'] //按钮
         }, function () {
           //layer.msg('正在下单', {icon: 1});
-          var index;
           $.ajax({
             type: "POST",
             url: "http://localhost:9999/order/submitOrder",
             data: {productId: data.id, orderProductName: data.productName,orderPrice:data.price,count:1},
             dataType: "json",
             beforeSend:function(XMLHttpRequest){
-              index = layer.load(1, {
+              layer.load(1, {
                 shade: [0.1,'#fff'] //0.1透明度的白色背景
               });
             },
             success: function (data) {
-              layer.close(index);
+              layer.msg("下单成功，请查看订单列表！",{time:2000}, function(){
+                layer.closeAll();
+              })
             },
             error: function (e) {
               console.log(e);
-              layer.close(index);
+              layer.closeAll();
             }
-          });
-          layer.load(1, {
-            shade: [0.1, '#fff'] //0.1透明度的白色背景
           });
 
         }, function (index) {
-          layer.close(index);
+          layer.closeAll();
         });
       }
     });

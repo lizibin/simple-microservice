@@ -5,13 +5,13 @@
 package com.ctnrs.gateway;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.cloud.client.SpringCloudApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * 网关应用.
  * @author zibin
  */
-@SpringCloudApplication
+@SpringBootApplication
 public class GatewayServiceApp {
 
   public static void main(String[] args) throws Exception {

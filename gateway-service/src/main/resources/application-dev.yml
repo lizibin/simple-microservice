@@ -8,28 +8,29 @@ spring:
           ##小写serviceId
           lower-case-service-id: true
       routes:
-        - id: user-service
+        - id: product-service
           #转发地址ser-service,对应eureka的别名
           uri: lb://product-service
           filters:
             - StripPrefix=1
-            #拦截以/user开头的转发到user-service
           predicates:
-            - Path=/user/**
+            - Path=/product/**
 
         - id: order-service
-          uri: lb://order-service
-          filters:
-            - StripPrefix=1
-          predicates:
-            - Path=/order/**
+            #转发地址ser-service,对应eureka的别名
+            uri: lb://order-service
+            filters:
+              - StripPrefix=1
+            predicates:
+              - Path=/order/**
 
-        - id: auth-service
-          uri: lb://stock-service
-          filters:
-            - StripPrefix=1
-          predicates:
-            - Path=/oauth2/**
+        - id: stock-service
+            #转发地址ser-service,对应eureka的别名
+            uri: lb://stock-service
+            filters:
+              - StripPrefix=1
+            predicates:
+              - Path=/stock/**
 
 eureka:
   instance:

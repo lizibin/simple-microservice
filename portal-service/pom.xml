@@ -29,17 +29,6 @@
 			<artifactId>spring-boot-starter-freemarker</artifactId>
 		</dependency>
 
-		<!-- 引入商品接口依赖包. -->
-		<dependency>
-			<groupId>cn.simple-microservice</groupId>
-			<artifactId>product-service-api</artifactId>
-		</dependency>
-
-		<!-- 引入订单接口依赖包. -->
-		<dependency>
-			<groupId>cn.simple-microservice</groupId>
-			<artifactId>order-service-api</artifactId>
-		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

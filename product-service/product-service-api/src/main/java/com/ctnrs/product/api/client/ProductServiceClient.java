@@ -26,14 +26,14 @@ public interface ProductServiceClient {
 	 * @param productId
 	 * @return
 	 */
-	@GetMapping("product/findByProductId")
+	@GetMapping("findByProductId")
 	R<Product> findByProductId(@RequestParam(value = "productId") Long productId);
 
 	/**
 	 * 获取所有商品集合
 	 * @return
 	 */
-	@GetMapping("product/queryAllProduct")
+	@GetMapping("queryAllProduct")
 	R<List<Product>> queryAllProduct();
 
 }

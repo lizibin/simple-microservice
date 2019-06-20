@@ -3,11 +3,17 @@ $(function () {
     var table = layui.table;
     table.render({
       elem: '#productList'
-      , url: 'queryProductList'
+      , url: 'http://localhost:9999/product/queryAllProduct'
       , cellMinWidth: 80
       , page: true
       , id: 'productListReload'
       , height: 500
+      ,response: {
+        statusName: 'status' //规定数据状态的字段名称，默认：code
+        ,statusCode: 200 //规定成功的状态码，默认：0
+        ,msgName: 'msg' //规定状态信息的字段名称，默认：msg
+        ,dataName: 'result' //规定数据列表的字段名称，默认：data
+      }
       , cols: [[
         {field: 'id', width: 180, title: '序列'}
         , {field: 'productName', title: '商品名称'}

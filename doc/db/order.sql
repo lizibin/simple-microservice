@@ -16,7 +16,7 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`tb_order` /*!40100 DEFAULT CHARACTER SE
 
 /*Table structure for table `order` */
 
-CREATE TABLE `order` (
+CREATE TABLE `orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `order_number` varchar(36) DEFAULT NULL COMMENT '订单号',
   `order_product_name` varchar(250) DEFAULT NULL COMMENT '订单商品名称',
@@ -26,7 +26,7 @@ CREATE TABLE `order` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-/*Data for the table `order` */
+/*Data for the table `orders` */
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

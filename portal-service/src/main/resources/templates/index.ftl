@@ -13,11 +13,11 @@
     <link rel="stylesheet" href="../js/layui/css/layui.css" media="all">
 </head>
 <body>
-<center>
-    <a href="http://www.ctnrs.com"><img alt="容器学院-www.ctnrs.com" src="../images/logo.png"></a>
-    <div class="page-container">
+<div style="background: url('/images/bg.png')  no-repeat; height: 930px; position: relative;" >
+<#--    <a href="http://www.ctnrs.com"><img alt="容器学院-www.ctnrs.com" src="../images/logo.png"></a>-->
+    <div class="page-container" style="width: 310px;height: 50px;background-color: #f0f3ef;left: 40%;top: 40%;position: absolute;">
         <h1 class="title"></h1>
-        <div style="margin-top: 15%;">
+        <div">
             <button class="layui-btn layui-btn-lg layui-btn-primary layui-btn-radius" onclick="queryProductList()">
                 查询商品服务
             </button>
@@ -26,7 +26,7 @@
             </button>
         </div>
     </div>
-</center>
+</div>
 <script src="../js/jquery-1.8.2.min.js"></script>
 <script src="../js/layui/layui.js"></script>
 <script src="../js/index.js"></script>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head lang="en">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,11 +13,12 @@
     <link rel="stylesheet" href="../js/layui/css/layui.css" media="all">
 </head>
 <body>
-<div style="background: url('/images/bg.png')  no-repeat; height: 930px; position: relative;" >
-<#--    <a href="http://www.ctnrs.com"><img alt="容器学院-www.ctnrs.com" src="../images/logo.png"></a>-->
-    <div class="page-container" style="width: 310px;height: 50px;background-color: #f0f3ef;left: 40%;top: 40%;position: absolute;">
+<div style="background: url('/images/bg.png')  no-repeat; height: 930px; position: relative;">
+    <#--    <a href="http://www.ctnrs.com"><img alt="容器学院-www.ctnrs.com" src="../images/logo.png"></a>-->
+    <div class="page-container"
+         style="width: 310px;height: 50px;background-color: #f0f3ef;left: 40%;top: 40%;position: absolute;">
         <h1 class="title"></h1>
-        <div">
+        <div>
             <button class="layui-btn layui-btn-lg layui-btn-primary layui-btn-radius" onclick="queryProductList()">
                 查询商品服务
             </button>
@@ -25,11 +26,14 @@
                 查询订单服务
             </button>
         </div>
+
     </div>
 </div>
-<script src="../js/jquery-1.8.2.min.js"></script>
-<script src="../js/layui/layui.js"></script>
-<script src="../js/index.js"></script>
+    <div style="margin-left: 50%;"><a href="http://www.ctnrs.com">容器学院 www.ctnrs.com</a></div>
+
+    <script src="../js/jquery-1.8.2.min.js"></script>
+    <script src="../js/layui/layui.js"></script>
+    <script src="../js/index.js"></script>
 
 </body>
 </html>

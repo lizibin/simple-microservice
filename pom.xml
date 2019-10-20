@@ -48,21 +48,27 @@
 	<profiles>
 		<profile>
 			<id>dev</id>
+			<properties>
+				<!-- 环境标识，需要与配置文件的名称相对应 -->
+				<profiles.active>dev</profiles.active>
+			</properties>
 			<activation>
+				<!-- 默认环境 -->
 				<activeByDefault>true</activeByDefault>
 			</activation>
-			<properties>
-				<profileActive>dev</profileActive>
-			</properties>
 		</profile>
-
 		<profile>
 			<id>fat</id>
 			<properties>
-				<profileActive>fat</profileActive>
+				<profiles.active>dat</profiles.active>
 			</properties>
 		</profile>
-
+		<profile>
+			<id>prod</id>
+			<properties>
+				<profiles.active>prod</profiles.active>
+			</properties>
+		</profile>
 	</profiles>
 	<!-- 管理依赖 -->
 	<dependencyManagement>

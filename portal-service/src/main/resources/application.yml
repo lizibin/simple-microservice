@@ -7,6 +7,6 @@ server:
     direct-buffers: true
 spring:
   application:
-    name: portal-service
+    name: @artifactId@
   profiles:
-    active: dev
+    active: @profiles.active@

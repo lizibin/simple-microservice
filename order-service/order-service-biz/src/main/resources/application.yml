@@ -1,7 +1,7 @@
 server:
   port: 8020
 spring:
-  profiles:
-    active: dev
   application:
-    name: order-service
+    name: @artifactId@
+  profiles:
+    active: @profiles.active@

@@ -60,7 +60,7 @@
 		<profile>
 			<id>fat</id>
 			<properties>
-				<profiles.active>dat</profiles.active>
+				<profiles.active>fat</profiles.active>
 			</properties>
 		</profile>
 		<profile>
